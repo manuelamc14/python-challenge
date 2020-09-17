@@ -17,10 +17,21 @@ with open(csv_path) as csv_file:
 
     # The total number of months included in the dataset
 
-    # Loop through add the rows
+    # Starting Variables
      
     total_months = 0
+    pl_list = []
+   
 
-    for row in csv_file:
+    for row in csv_reader:
+        # total number of months
         total_months += 1
+          
+        # Add monthly profits or loses
 
+        pl_list.append(int(row[1]))
+
+    #net total amount of "Profit/Losses"
+    total_pl = sum(pl_list)
+    
+ 
