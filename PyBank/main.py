@@ -75,3 +75,6 @@ with open(csv_path) as csv_file:
     
     total_decrease = "{} (${})".format(date_decrease[0], value_decrease[0])
     print(total_decrease)
+
+# Set variable for results file
+results_file = os.path.join("..","Analysis", "pybank_analysis.txt")
