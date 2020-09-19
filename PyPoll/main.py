@@ -74,8 +74,9 @@ with open(csv_path) as csv_file:
 
 output = os.path.join("Analysis","pypoll_analysis.txt")
 
-print("Election Results")
-
 # Open the file
 
 with open(output, "w") as poll_results:
+    poll_results.write("Election Results\n")
+    poll_results.write("-------------------------\n")
+    poll_results.write("Total Votes: {}\n".format(total_votes))
