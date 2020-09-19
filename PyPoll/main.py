@@ -56,3 +56,16 @@ with open(csv_path) as csv_file:
     # Find the winner 
 
     winner = statistics.mode(candidates)
+
+    # Print the resulst out in the terminal
+
+    print("Election Results")
+    print("-------------------------")
+    print("Total Votes: {}".format(total_votes))
+    print("-------------------------")
+    results('Khan')
+    results('Correy')
+    results('Li')
+    results("O'Tooley")
+    print('-------------------------')
+    print('Winner: {}'.format(winner))
