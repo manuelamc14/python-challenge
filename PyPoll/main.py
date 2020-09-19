@@ -69,3 +69,13 @@ with open(csv_path) as csv_file:
     results("O'Tooley")
     print('-------------------------')
     print('Winner: {}'.format(winner))
+
+# Set the path for output file
+
+output = os.path.join("Analysis","pypoll_analysis.txt")
+
+print("Election Results")
+
+# Open the file
+
+with open(output, "w") as poll_results:
