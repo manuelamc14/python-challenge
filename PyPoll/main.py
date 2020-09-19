@@ -34,3 +34,21 @@ with open(csv_path) as csv_file:
     
     candidate_list = list(set(candidates))
 
+    # Define a function to summarize the candidate's results
+
+    def results(candidate_name):
+
+        # Starting a variable to store the votes per candidate
+
+        votes_per_candidate = int(0)
+
+        # Iterate through the candidate information
+
+        for row in candidates:
+            if candidate_name == row:
+                votes_per_candidate += 1
+        
+        # Calculate the percentage of votes per candidate
+
+        percentage = format(round((votes_per_candidate / total_votes)* 100, 2), '.3f')
+        print("{}: {}% ({})".format(candidate_name, percentage, votes_per_candidate))
