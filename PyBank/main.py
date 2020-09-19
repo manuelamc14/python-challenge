@@ -15,8 +15,6 @@ with open(csv_path) as csv_file:
 
     csv_header = next(csv_file)
 
-    # The total number of months included in the dataset
-
     # Starting Variables
      
     total_months = 0
@@ -37,6 +35,7 @@ with open(csv_path) as csv_file:
         date.append(str(row[0]))
 
     # net total amount of "Profit/Losses"
+
     total_pl = sum(pl_list)
         
     # Create a list to store the variation month by month
@@ -49,24 +48,29 @@ with open(csv_path) as csv_file:
 
     # Greatest Increase in Profits
 
-    # date = []
-    # for date in csv_reader:
-    #     date.append(row[0])
-    # print(date)
+    # Date when the greatet increase occurred
 
     date_increase = [x for x, y in zip(date[1:], monthly_change) if y == max(monthly_change)]
+    
+    # Amount of the greatest increase
 
     value_increase = [y for x, y in zip(date[1:], monthly_change) if y == max(monthly_change)]
 
     total_increase = "{} (${})".format(date_increase[0], value_increase[0])
     
     # Greatest Decrease in Profits
-    
+
+    # Date when the greatest decrease occurred
+
     date_decrease = [x for x, y in zip(date[1:], monthly_change) if y == min(monthly_change)]
+    
+    # Amount of the greatest decrease 
 
     value_decrease = [y for x, y in zip(date[1:], monthly_change) if y == min(monthly_change)]
     
     total_decrease = "{} (${})".format(date_decrease[0], value_decrease[0])
+
+    # Print the report
     
     print("Financial Analysis")
     print("----------------------------")
