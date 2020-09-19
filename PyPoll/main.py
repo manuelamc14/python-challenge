@@ -52,3 +52,7 @@ with open(csv_path) as csv_file:
 
         percentage = format(round((votes_per_candidate / total_votes)* 100, 2), '.3f')
         print("{}: {}% ({})".format(candidate_name, percentage, votes_per_candidate))
+
+    # Find the winner 
+
+    winner = statistics.mode(candidates)
