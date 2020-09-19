@@ -38,20 +38,14 @@ with open(csv_path) as csv_file:
 
     # net total amount of "Profit/Losses"
     total_pl = sum(pl_list)
-
-    print(total_pl)
-    print(total_months) 
-    
+        
     # Create a list to store the variation month by month
 
     monthly_change = [y-x for x, y in zip(pl_list, pl_list[1:])]
-    print(monthly_change[0])
 
     # Average of the changes in "Profit/Losses" over the entire period
 
     change_average = round(sum(monthly_change) / len(monthly_change), 2)
-    #print(change_average)
-    print(change_average)
 
     # Greatest Increase in Profits
 
@@ -65,8 +59,7 @@ with open(csv_path) as csv_file:
     value_increase = [y for x, y in zip(date[1:], monthly_change) if y == max(monthly_change)]
 
     total_increase = "{} (${})".format(date_increase[0], value_increase[0])
-    print(total_increase)
-
+    
     # Greatest Decrease in Profits
     
     date_decrease = [x for x, y in zip(date[1:], monthly_change) if y == min(monthly_change)]
@@ -74,7 +67,25 @@ with open(csv_path) as csv_file:
     value_decrease = [y for x, y in zip(date[1:], monthly_change) if y == min(monthly_change)]
     
     total_decrease = "{} (${})".format(date_decrease[0], value_decrease[0])
-    print(total_decrease)
+    
+    print("Financial Analysis")
+    print("----------------------------")
+    print("Total Months: {}".format(total_months))
+    print("Total: ${}".format(total_pl))
+    print("Average Change: ${}".format(change_average))
+    print("Greatest increase in Profits: {}".format(total_increase))
+    print("Greatest decrease in Profits: {}".format(total_decrease))
 
 # Set variable for results file
 results_file = os.path.join("..","Analysis", "pybank_analysis.txt")
+
+#  Open the results file
+
+with open(results_file, "w") as textfile:
+    textfile.write("Financial Analysis\n")
+    textfile.write("----------------------------\n")
+    textfile.write("Total Months: {}\n".format(total_months))
+    textfile.write("Total: ${}\n".format(total_pl))
+    textfile.write("Average Change: ${}\n".format(change_average))
+    textfile.write("Greatest increase in Profits: {}\n".format(total_increase))
+    textfile.write("Greatest decrease in Profits: {}\n".format(total_decrease))
