@@ -51,10 +51,10 @@ with open(csv_path) as csv_file:
         # Calculate the percentage of votes per candidate
 
         percentage = format(round((votes_per_candidate / total_votes)* 100, 2), '.3f')
-        print("{}: {}% ({})".format(candidate_name, percentage, votes_per_candidate))
+        return "{}: {}% ({})".format(candidate_name, percentage, votes_per_candidate)
 
-    # Find the winner 
-
+     #Find the winner 
+   
     winner = statistics.mode(candidates)
 
     # Print the resulst out in the terminal
@@ -63,10 +63,10 @@ with open(csv_path) as csv_file:
     print("-------------------------")
     print("Total Votes: {}".format(total_votes))
     print("-------------------------")
-    results('Khan')
-    results('Correy')
-    results('Li')
-    results("O'Tooley")
+    print(results('Khan'))
+    print(results('Correy'))
+    print(results('Li'))
+    print(results("O'Tooley"))
     print('-------------------------')
     print('Winner: {}'.format(winner))
 
@@ -80,3 +80,10 @@ with open(output, "w") as poll_results:
     poll_results.write("Election Results\n")
     poll_results.write("-------------------------\n")
     poll_results.write("Total Votes: {}\n".format(total_votes))
+    poll_results.write("-------------------------\n")
+    poll_results.write(("{}\n".format(results('Khan'))))
+    poll_results.write(("{}\n".format(results('Correy'))))
+    poll_results.write(("{}\n".format(results('Li'))))
+    poll_results.write(("{}\n".format(results("O'Tooley"))))
+    poll_results.write("-------------------------\n")
+    poll_results.write('Winner: {}'.format(winner))
