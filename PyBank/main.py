@@ -4,7 +4,7 @@ import csv
 
 # Set path for file
 
-csv_path = os.path.join("..","Resources", "budget_data.csv")
+csv_path = os.path.join("Resources", "budget_data.csv")
 
 # Open the csv
 
@@ -81,7 +81,7 @@ with open(csv_path) as csv_file:
     print("Greatest decrease in Profits: {}".format(total_decrease))
 
 # Set variable for results file
-results_file = os.path.join("..","Analysis", "pybank_analysis.txt")
+results_file = os.path.join("Analysis", "pybank_analysis.txt")
 
 #  Open the results file
 
