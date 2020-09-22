@@ -23,10 +23,12 @@ with open(csv_path) as csv_file:
    
 
     for row in csv_reader:
+
         # total number of months
+
         total_months += 1
          
-        # Add monthly profits or loses
+        # Add monthly profits or loses to pl_list
 
         pl_list.append(int(row[1]))
          
@@ -81,6 +83,7 @@ with open(csv_path) as csv_file:
     print("Greatest decrease in Profits: {}".format(total_decrease))
 
 # Set variable for results file
+
 results_file = os.path.join("Analysis", "pybank_analysis.txt")
 
 #  Open the results file

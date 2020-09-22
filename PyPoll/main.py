@@ -74,7 +74,7 @@ with open(csv_path) as csv_file:
 
 output = os.path.join("Analysis","pypoll_analysis.txt")
 
-# Open the file
+# Open the file and write in the text document
 
 with open(output, "w") as poll_results:
     poll_results.write("Election Results\n")
@@ -86,4 +86,4 @@ with open(output, "w") as poll_results:
     poll_results.write(("{}\n".format(results('Li'))))
     poll_results.write(("{}\n".format(results("O'Tooley"))))
     poll_results.write("-------------------------\n")
-    poll_results.write('Winner: {}'.format(winner))
+    poll_results.write('Winner: {}'.format(winner)) 
