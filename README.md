@@ -1,5 +1,14 @@
 # Python_Basics_Project
 
+## Tecnologies 
+
+* Python
+
+## Instructions
+
+Run the main.py files on your terminal to obtain the report results.
+
+## Desciption
 This project aimed to use Python's essential functions and methods to generate a short analysis of two data sets. One is associated with the bank financial data (Resources/ budget_data.csv) and the second one with poll results (Resources / eleection_data.csv). 
 
 The budget_data analysis pretended to respond to the following questions:
@@ -19,4 +28,16 @@ On the other hand, the eleection_data.csv analyzed looked to respond to the foll
 - The winner of the election based on popular vote.
 
 Functions like sum, max, append, zip, and len; methods like list comprehensions and loops, and conditional statements are part of this analysis to find the correct answers. 
+
+## Images
+
+* Report results - PyBank
+
+![ScreenShot](https://github.com/manuelamc14/python_basics_project/blob/master/Images/pybank_results.png)
+
+* Report results - PyPoll
+
+![ScreenShot](https://github.com/manuelamc14/python_basics_project/blob/master/Images/pypoll_results.png)
+
+
 
