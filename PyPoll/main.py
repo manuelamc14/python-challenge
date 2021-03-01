@@ -5,8 +5,8 @@ import statistics
 
 # Set path for file
 
-csv_path = os.path.join("Resources", "election_data.csv")
-
+csv_path = os.path.join("..", "Resources", "election_data.csv")
+#csv_path = "../Resources/election_data.csv"
 # Open csv
 
 with open(csv_path) as csv_file:
